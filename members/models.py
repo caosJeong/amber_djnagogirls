@@ -42,6 +42,7 @@ class Member(models.Model):
     member_language = models.CharField(verbose_name=_("사용하는 언어"), max_length=1000, blank=True)
     member_sleep_time = models.FloatField(verbose_name=_('수면시간'), default=18.5)
     member_talent = models.TextField(_('재능 소개'), blank=True, max_length=5000)
+    member_img_name = models.CharField(_('대표이미지 파일명'), blank=True, max_length=30)
 
     class Meta:
         verbose_name = _("구성원")

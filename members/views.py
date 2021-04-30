@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views import generic
+from django.shortcuts import render, get_object_or_404
 
 from members.models import Member
 
@@ -11,11 +12,11 @@ class HomeView(generic.TemplateView):
     member = Member
     template_name = 'members/members_info.html'
     paginate_by = 10
-    ordering = '-pk'
+    ordering = 'pk'
 
     def get_queryset(self):
-        members = self.member.objects.all()
-        return members[:self.paginate_by]
+        members = self.member.objects.all().order_by('id')
+        return members
 
     def get(self, request, *args, **kwargs):
         ctx = {
@@ -24,3 +25,10 @@ class HomeView(generic.TemplateView):
         }
         return self.render_to_response(ctx)
 
+
+class MemberDetailView(generic.DetailView):
+    """
+    구성원 상세 화면
+    """
+    model = Member
+    template_name = 'members/member_detail.html'
