@@ -12,11 +12,11 @@
                     <div class="w3-third">
                         {% for object in block_object %}
                             {% if object.member_img_name %}
-                                <a href="{% url 'member_detail' pk=object.pk %}">
+                                <a href="{% url 'member:member_detail' pk=object.pk %}">
                                     <img src="/static/img/{{ object.member_img_name }}" style="width:100%">
                                 </a>
                             {% else %}
-                                <a href="{% url 'member_detail' pk=object.pk %}">
+                                <a href="{% url 'member:member_detail' pk=object.pk %}">
                                     <p>{{ object.member_name }}</p>
                                 </a>
                             {% endif %}

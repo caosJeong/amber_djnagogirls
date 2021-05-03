@@ -8,7 +8,7 @@ from .views import (
     MemberAddView
 
 )
-
+app_name = 'member'
 urlpatterns = [
     path('', HomeView.as_view(), name='member_list'),
     path('member/<int:pk>/', MemberDetailView.as_view(), name='member_detail'),
