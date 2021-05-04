@@ -9,11 +9,11 @@
 
         <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
             <div class="w3-content" style="max-width:600px">
-                <h4 class="w3-center"><b>꾸다 구성원 추가</b></h4>
-                <p>꾸다 구성원이 되고 싶으면 아래 양식을 추가 하세요!</p>
+                <h4 class="w3-center"><b>꾸다 구성원 수정</b></h4>
+                <p>꾸다 구성원의 정보를 수정 할 수 있어요!</p>
                 <form method="post">{% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit" value="Save">
+                    <input type="submit" value="수정">
                 </form>
             </div>
         </div>
