@@ -1,3 +1,4 @@
+from django.conf.urls import url
 from django.urls import path
 from .views import (
     # 홈화면
@@ -10,7 +11,7 @@ from .views import (
 )
 app_name = 'member'
 urlpatterns = [
-    path('', HomeView.as_view(), name='member_list'),
-    path('member/<int:pk>/', MemberDetailView.as_view(), name='member_detail'),
-    path('member/add', MemberAddView.as_view(), name='member_form'),
+    url(r'^$',  HomeView.as_view(), name='member_list'),
+    url(r'^(?P<pk>\d+)/', MemberDetailView.as_view(), name='member_detail'),
+    url(r'^add/$', MemberAddView.as_view(), name='member_add'),
 ]

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.urls import reverse, reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 from django.views import generic
 from django.shortcuts import render, get_object_or_404
@@ -11,6 +12,7 @@ class HomeView(generic.ListView):
     홈 화면
     """
     model = Member
+    ordering = ['id']
 
 
 class MemberDetailView(generic.DetailView):
@@ -29,4 +31,4 @@ class MemberAddView(generic.CreateView):
               'member_regular', 'member_feature', 'member_feature', 'member_neuter',
               'member_color', 'member_language', 'member_sleep_time', 'member_talent', 'member_img_name', ]
     template_name = 'members/members_form.html'
-    success_url = _('member_list')
+    success_url = reverse_lazy('member:member_list')
