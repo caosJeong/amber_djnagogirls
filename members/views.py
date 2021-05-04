@@ -31,4 +31,6 @@ class MemberAddView(generic.CreateView):
               'member_regular', 'member_feature', 'member_feature', 'member_neuter',
               'member_color', 'member_language', 'member_sleep_time', 'member_talent', 'member_img_name', ]
     template_name = 'members/members_form.html'
-    success_url = reverse_lazy('member:member_list')
+
+    def get_success_url(self):
+        return reverse('member:member_list')
