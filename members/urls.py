@@ -11,7 +11,7 @@ from .views import (
 )
 app_name = 'member'
 urlpatterns = [
-    url(r'^$',  HomeView.as_view(), name='member_list'),
-    url(r'^(?P<pk>\d+)/', MemberDetailView.as_view(), name='member_detail'),
-    url(r'^add/$', MemberAddView.as_view(), name='member_add'),
+    path('',  HomeView.as_view(), name='member_list'),
+    path('<int:pk>/', MemberDetailView.as_view(), name='member_detail'),
+    path('add/', MemberAddView.as_view(), name='member_add'),
 ]
