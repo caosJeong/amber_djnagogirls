@@ -1,0 +1,40 @@
+{% extends 'members/base.html' %}
+{% load member_decorator %}
+{% load static %}
+{% block content %}
+    <!-- Page content -->
+    <div class="w3-content" style="max-width:1100px">
+
+        <!-- About Section -->
+        <div class="w3-row w3-padding-64" id="about">
+            <div class="w3-col m6 w3-padding-large w3-hide-small">
+                <img src="/static/img/{{ object.member_img_name }}" class="w3-round w3-image w3-opacity-min"
+                     alt="Table Setting"
+                     width="600" height="750">
+            </div>
+
+            <div class="w3-col m6 w3-padding-large">
+                <h1 class="w3-center">{{ object.member_name }}</h1>
+                <p class="w3-text-amber w3-small">{{ object.member_legs|legs_hashtag_str|safe }}</p>
+                <br>
+                <h5 class="w3-center">{{ object.member_birthday }}</h5>
+                <h5 class="w3-center">{{ object.member_gender }}</h5>
+                <h5 class="w3-center">중성화 {{ object.member_neuter|boolean_str|safe }}</h5>
+                <h5 class="w3-center">정규 구성원 {{ object.member_regular|boolean_str|safe }}</h5>
+                <p class="w3-large">{{ object.member_description }}</p>
+                <p class="w3-large">특징: {{ object.member_feature }}</p>
+                <p class="w3-large">잘하는거 : {{ object.member_talent }}</p>
+                <div>
+                    <a class="w3-left-align" href="{% url 'member:member_update' pk=object.pk %}"><p
+                            class="w3-text-blue-gray">수정하기</p></a>
+                    <a class="w3-left-right" href="{% url 'member:member_delete' pk=object.pk %}"><p
+                            class="w3-text-deep-purple">삭제하기</p></a>
+
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+    </div>
+{% endblock %}

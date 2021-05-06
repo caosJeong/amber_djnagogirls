@@ -1,0 +1,32 @@
+{% extends 'members/base.html' %}
+{% load member_decorator %}
+{% load static %}
+{% block content %}
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+        {% if object_list %}
+            <div class="w3-row">
+                {% for block_object in object_list|block_object_list:3 %}
+                    <div class="w3-third">
+                        {% for object in block_object %}
+                            {% if object.member_img_name %}
+                                <a href="{% url 'member:member_detail' pk=object.pk %}">
+                                    <img src="/static/img/{{ object.member_img_name }}" style="width:100%">
+                                </a>
+                            {% else %}
+                                <a href="{% url 'member:member_detail' pk=object.pk %}">
+                                    <p>{{ object.member_name }}</p>
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+            </div>
+            <!-- Photo grid -->
+        {% else %}
+            구성원을 추가해보세요!
+        {% endif %}
+    </div>
+{% endblock %}

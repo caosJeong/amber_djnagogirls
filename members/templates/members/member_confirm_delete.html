@@ -1,0 +1,19 @@
+{% extends 'members/base.html' %}
+{% load static %}
+{% block content %}
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:300px">
+        <!-- Push down content on small screens -->
+        <div class="w3-hide-large" style="margin-top:83px"></div>
+        <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+            <div class="w3-content" style="max-width:600px">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="alert alert-danger">{{ object }} 해당 구성원을 삭제 하나요?</div>
+                    <input type="submit" class="w3-button w3-text-red" value="네">
+                    <input class="w3-button w3-text-gray" value="아니요">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
