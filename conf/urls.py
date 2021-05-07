@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', RedirectView.as_view(url=reverse_lazy('member:member_list'), permanent=True)),
     path('member/', include('members.urls', namespace='member')),
+    path('api/', include('api.urls')),
 ]
