@@ -9,11 +9,11 @@ class MemberFrom(forms.ModelForm):
         model = Member
         fields = '__all__'
 
-    def __init__(self, member=None, *args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if isinstance(member, Member):
-            self.fields['member_legs'].widget.attrs['disabled'] = 'true'
-            self.fields['member_name'].widget.attrs['disabled'] = 'true'
+        if self.instance.id is not None:
+            self.fields['member_legs'].widget.attrs['class'] = 'w3-text-gray'
+            self.fields['member_name'].widget.attrs['class'] = 'w3-text-gray'
         else:
             self.fields['member_description'].widget.attrs['placeholder'] = '구성원의 특징을 입력 해 주세요'
             self.fields['member_feature'].widget.attrs['placeholder'] = '구성원의 특징을 입력 해 주세요'

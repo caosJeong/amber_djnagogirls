@@ -31,7 +31,7 @@ class MemberAddView(CreateView):
     template_name = 'members/member_form.html'
 
     def get_success_url(self):
-        return reverse('member:member_list')
+        return reverse('member:member_detail', kwargs={'pk': self.object.id})
 
 
 class MemberUpdateView(UpdateView):
@@ -43,14 +43,7 @@ class MemberUpdateView(UpdateView):
     template_name = 'members/member_update.html'
 
     def get_success_url(self):
-        return reverse('member:member_list')
-
-    def get_form_kwargs(self):
-        kwargs = super().get_form_kwargs()
-        kwargs.update({
-            'member': kwargs['instance']
-        })
-        return kwargs
+        return reverse('member:member_detail', kwargs={'pk': self.object.id})
 
 
 class MemberDeleteView(DeleteView):
