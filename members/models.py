@@ -40,7 +40,7 @@ class Legs(models.Model):
         ordering = ('-pk',)
 
     def __str__(self):
-        return '{} - {} - {}'.format(self.legs_type, self.legs_sub1_type, self.legs_sub2_type)
+        return f'{self.legs_type} - {self.legs_sub1_type} - {self.legs_sub2_type}'
 
 
 class Member(models.Model):
@@ -66,7 +66,7 @@ class Member(models.Model):
         ordering = ('-pk',)
 
     def __str__(self):
-        return '{}'.format(self.member_name)
+        return f'{self.member_name}'
 
     def get_absolute_url(self):
         return reverse('member:member_detail', args=[self.id])
