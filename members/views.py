@@ -3,7 +3,7 @@ from django.urls import reverse
 from django.views import generic
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-from members.forms import MemberFrom, MemberUpdateFrom
+from members.forms import MemberFrom
 from members.models import Member
 
 
@@ -26,15 +26,12 @@ class MemberAddView(CreateView):
     """
     구성원 추가 화면
     """
+
     form_class = MemberFrom
     template_name = 'members/member_form.html'
 
     def get_success_url(self):
-        return reverse('member:member_list')
-
-    def form_invalid(self, form):
-        """If the form is invalid, render the invalid form."""
-        return self.render_to_response(self.get_context_data(form=form))
+        return reverse('member:member_detail', kwargs={'pk': self.object.id})
 
 
 class MemberUpdateView(UpdateView):
@@ -42,8 +39,11 @@ class MemberUpdateView(UpdateView):
     구성원 수정 화면
     """
     model = Member
-    form_class = MemberUpdateFrom
+    form_class = MemberFrom
     template_name = 'members/member_update.html'
+
+    def get_success_url(self):
+        return reverse('member:member_detail', kwargs={'pk': self.object.id})
 
 
 class MemberDeleteView(DeleteView):

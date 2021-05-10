@@ -1,6 +1,4 @@
 from django import forms
-from django.core.exceptions import ValidationError
-
 from .models import Member
 
 
@@ -9,15 +7,13 @@ class MemberFrom(forms.ModelForm):
 
     class Meta:
         model = Member
-        # fields = ['member_legs', 'member_name', 'member_gender', 'member_birthday', 'member_description',
-        #           'member_regular', 'member_feature', 'member_feature', 'member_neuter',
-        #           'member_color', 'member_language', 'member_sleep_time', 'member_talent', 'member_img_name', ]
         fields = '__all__'
 
-
-class MemberUpdateFrom(MemberFrom):
-    class Meta(MemberFrom.Meta):
-        widgets = {
-            'member_legs': forms.Select(attrs={'disabled': 'true'}),
-            'member_name': forms.TextInput(attrs={'disabled': 'true'}),
-        }
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.instance.id is not None:
+            self.fields['member_legs'].widget.attrs['class'] = 'w3-text-gray'
+            self.fields['member_name'].widget.attrs['class'] = 'w3-text-gray'
+        else:
+            self.fields['member_description'].widget.attrs['placeholder'] = '구성원의 특징을 입력 해 주세요'
+            self.fields['member_feature'].widget.attrs['placeholder'] = '구성원의 특징을 입력 해 주세요'
