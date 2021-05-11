@@ -21,6 +21,12 @@ class MemberDetailView(generic.DetailView):
     """
     model = Member
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['todo_list'] = self.object.assign.all()
+        context['watcher_list'] = self.object.watcher.values('todo_title', 'todo_assign__member_name')
+        return context
+
 
 class MemberAddView(CreateView):
     """

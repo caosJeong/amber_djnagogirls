@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'members',
-    'api'
+    'todo',
+    'api',
 ]
 
 MIDDLEWARE = [

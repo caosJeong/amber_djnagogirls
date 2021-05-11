@@ -70,3 +70,5 @@ class Member(models.Model):
 
     def get_absolute_url(self):
         return reverse('member:member_detail', args=[self.id])
+
+
