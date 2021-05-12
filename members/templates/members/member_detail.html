@@ -25,14 +25,18 @@
                 <p class="w3-large">특징: {{ object.member_feature }}</p>
                 <p class="w3-large">잘하는거 : {{ object.member_talent }}</p>
                 <p class="w3-large">해야 할 일 :
-                    {% for todo in todo_list %}
-                        <span class="w3-text-red">{{ todo.todo_title }}
-                            <span class="w3-text-gray w3-small"> (감시자: {{ todo.todo_watcher }})<br></span></span>
+                    {% for todo in object.assign.all %}
+                        {%  with title=todo.todo_title watcher=todo.todo_watcher %}
+                            <span class="w3-text-red">{{ title }}
+                                <span class="w3-text-gray w3-small"> (감시자: {{ watcher }})<br></span></span>
+                        {% endwith %}
                     {% endfor %}
                 </p>
                 <p class="w3-large">감시하기 :
                     {% for watcher in watcher_list %}
-                        <span class="w3-text-blue-gray">{{ watcher.todo_assign__member_name}} - {{ watcher.todo_title }}</span>
+                        {%  with title=watcher.todo_title assign_name=watcher.todo_assign__member_name %}
+                            <span class="w3-text-blue-gray">{{ assign_name}} - {{ title }}</span>
+                        {% endwith %}
                     {% endfor %}
                 </p>
                 <div>

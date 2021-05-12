@@ -23,7 +23,7 @@ class MemberDetailView(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['todo_list'] = self.object.assign.all()
+        # 구성원에게 할당된 감시목록 가져오기
         context['watcher_list'] = self.object.watcher.values('todo_title', 'todo_assign__member_name')
         return context
 

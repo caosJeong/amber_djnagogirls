@@ -26,7 +26,7 @@ class Todo(models.Model):
         (RUN, _('도망가기')),
     )
 
-    todo_title = models.CharField(max_length=100, verbose_name=_('할일 제목'), blank=False)
+    todo_title = models.CharField(max_length=100, verbose_name=_('할일 제목'))
     todo_content = models.TextField(max_length=100, verbose_name=_('할일 내용'), blank=True)
     todo_deadline_date = models.DateField(verbose_name=_('할일 마감 날짜'), default=timezone.now, blank=True,
                                           validators=[future_date_validator])
@@ -34,7 +34,7 @@ class Todo(models.Model):
     todo_watcher = models.ForeignKey(Member, on_delete=models.CASCADE, verbose_name=_('감시자'), blank=True,
                                      related_name='watcher')
     todo_progressing = models.CharField(verbose_name=_('진행 상태'), choices=PROCESS_CHOICES,
-                                        max_length=10, default=PLAN, blank=False)
+                                        max_length=10, default=PLAN)
     todo_reject_text = models.CharField(max_length=100, verbose_name=_('할일 거절 사유'), blank=True)
 
     class Meta:
