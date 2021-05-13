@@ -1,0 +1,183 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-13 10:41+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: conf/settings.py:135
+msgid "Korean"
+msgstr ""
+
+#: conf/settings.py:136
+msgid "English"
+msgstr ""
+
+#: members/models.py:26 , CAT, ,
+msgid "PEOPLE"
+msgstr "휴먼"
+
+#: members/models.py:27
+msgid "CAT"
+msgstr "애옹쓰"
+
+#: members/models.py:28
+msgid "DOG"
+msgstr "멍뭉이"
+
+#: members/models.py:29
+msgid "ANOTHER"
+msgstr "?!?!"
+
+#: members/models.py:32
+msgid "종류"
+msgstr ""
+
+#: members/models.py:34
+msgid "서브1 분류"
+msgstr ""
+
+#: members/models.py:35
+msgid "서브2 분류"
+msgstr ""
+
+#: members/models.py:38 members/models.py:47
+msgid "종족"
+msgstr ""
+
+#: members/models.py:39
+msgid "종족 목록"
+msgstr ""
+
+#: members/models.py:48
+msgid "이름"
+msgstr ""
+
+#: members/models.py:50
+msgid "성별"
+msgstr ""
+
+#: members/models.py:51
+msgid "생년월일"
+msgstr ""
+
+#: members/models.py:53
+msgid "소개"
+msgstr ""
+
+#: members/models.py:54
+msgid "정규 구성원 여부"
+msgstr ""
+
+#: members/models.py:55
+msgid "특색"
+msgstr ""
+
+#: members/models.py:56
+msgid "중성화여부"
+msgstr ""
+
+#: members/models.py:57
+msgid "고유 색깔"
+msgstr ""
+
+#: members/models.py:58
+msgid "사용하는 언어"
+msgstr ""
+
+#: members/models.py:59
+msgid "수면시간"
+msgstr ""
+
+#: members/models.py:60
+msgid "재능 소개"
+msgstr ""
+
+#: members/models.py:61
+msgid "대표이미지 파일명"
+msgstr ""
+
+#: members/models.py:64
+msgid "구성원"
+msgstr ""
+
+#: members/models.py:65
+msgid "구성원 목록"
+msgstr ""
+
+#: members/templates/members/member_detail.html:19
+msgid "애옹쓰"
+msgstr ""
+
+#: todo/models.py:14
+msgid "not allow past date"
+msgstr ""
+
+#: todo/models.py:22
+msgid "계획단계"
+msgstr ""
+
+#: todo/models.py:23
+msgid "수행중"
+msgstr ""
+
+#: todo/models.py:24
+msgid "할일완료"
+msgstr ""
+
+#: todo/models.py:25
+msgid "미루기"
+msgstr ""
+
+#: todo/models.py:26
+msgid "도망가기"
+msgstr ""
+
+#: todo/models.py:29
+msgid "할일 제목"
+msgstr ""
+
+#: todo/models.py:30
+msgid "할일 내용"
+msgstr ""
+
+#: todo/models.py:31
+msgid "할일 마감 날짜"
+msgstr ""
+
+#: todo/models.py:33
+msgid "할일 수행자"
+msgstr ""
+
+#: todo/models.py:34
+msgid "감시자"
+msgstr ""
+
+#: todo/models.py:36
+msgid "진행 상태"
+msgstr ""
+
+#: todo/models.py:38
+msgid "할일 거절 사유"
+msgstr ""
+
+#: todo/models.py:41
+msgid "구성원 할일"
+msgstr ""
+
+#: todo/models.py:42
+msgid "구성원 할일 목록"
+msgstr ""

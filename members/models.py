@@ -20,13 +20,13 @@ def past_date_validator(value):
 
 class Legs(models.Model):
     PEOPLE, CAT, DOG, ANOTHER = (
-        '휴먼', '애옹쓰', '멍뭉이', '?!?!'
+        _('PEOPLE'), _('CAT'), _('DOG'), _('ANOTHER')
     )
     LEGS_BIG_TYPE_CHOICES = (
-        (PEOPLE, _('휴먼')),
-        (CAT, _('애옹쓰')),
-        (DOG, _('멍뭉이')),
-        (ANOTHER, _('?!?!')),
+        (PEOPLE, _('PEOPLE')),
+        (CAT, _('CAT')),
+        (DOG, _('DOG')),
+        (ANOTHER, _('ANOTHER')),
     )
 
     legs_type = models.CharField(verbose_name=_('종류'), choices=LEGS_BIG_TYPE_CHOICES,
