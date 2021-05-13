@@ -13,7 +13,7 @@
                 <p>꾸다 구성원이 되고 싶으면 아래 양식을 추가 하세요!</p>
                 <form method="post">{% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit" value="저장">
+                    <input type="submit" value="{{ _('B_SAVE') }}">
                 </form>
             </div>
         </div>
