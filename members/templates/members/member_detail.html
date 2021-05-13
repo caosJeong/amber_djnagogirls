@@ -1,5 +1,6 @@
 {% extends 'members/base.html' %}
 {% load member_decorator %}
+{% load i18n %}
 {% load static %}
 {% block content %}
     <!-- Page content -->
@@ -19,20 +20,20 @@
                 <br>
                 <h5 class="w3-center">{{ object.member_birthday }}</h5>
                 <h5 class="w3-center">{{ object.member_gender }}</h5>
-                <h5 class="w3-center">{{ _('NEUT') }} {{ object.member_neuter|boolean_str|safe }}</h5>
-                <h5 class="w3-center">{{ _('REGULAR_YN') }} {{ object.member_regular|boolean_str|safe }}</h5>
+                <h5 class="w3-center">{% translate "NEUT" %}  {{ object.member_neuter|boolean_str|safe }}</h5>
+                <h5 class="w3-center">{% translate "REGULAR_YN" %} {{ object.member_regular|boolean_str|safe }}</h5>
                 <p class="w3-large">{{ object.member_description }}</p>
-                <p class="w3-large">{{ _('MEMBER_FEATURE') }}: {{ object.member_feature }}</p>
-                <p class="w3-large">{{ _('MEMBER_TALENT') }} : {{ object.member_talent }}</p>
-                <p class="w3-large">{{ _('TODO') }}:
+                <p class="w3-large">{% translate "MEMBER_FEATURE" %} : {{ object.member_feature }}</p>
+                <p class="w3-large">{% translate "MEMBER_TALENT" %}  : {{ object.member_talent }}</p>
+                <p class="w3-large">{% translate "TODO" %} :
                     {% for todo in object.assign.all %}
                         {%  with title=todo.todo_title watcher=todo.todo_watcher %}
                             <span class="w3-text-red">{{ title }}
-                                <span class="w3-text-gray w3-small"> ({{ _('WATCHER') }}: {{ watcher }})<br></span></span>
+                                <span class="w3-text-gray w3-small"> ({% translate "WATCHER" %})<br></span></span>
                         {% endwith %}
                     {% endfor %}
                 </p>
-                <p class="w3-large">{{ _('TODO_WATCH') }} :
+                <p class="w3-large">{% translate "TODO_WATCH" %} :
                     {% for watcher in watcher_list %}
                         {%  with title=watcher.todo_title assign_name=watcher.todo_assign__member_name %}
                             <span class="w3-text-blue-gray">{{ assign_name}} - {{ title }}</span>
@@ -41,9 +42,9 @@
                 </p>
                 <div>
                     <a class="w3-left-align" href="{% url 'member:member_update' pk=object.pk %}"><p
-                            class="w3-text-blue-gray">{{ _('B_UPDATE') }}</p></a>
+                            class="w3-text-blue-gray">{% translate "B_UPDATE" %}</p></a>
                     <a class="w3-left-right" href="{% url 'member:member_delete' pk=object.pk %}"><p
-                            class="w3-text-deep-purple">{{ _('B_DELETE') }}</p></a>
+                            class="w3-text-deep-purple">{% translate "B_DELETE" %}</p></a>
 
                 </div>
             </div>

@@ -1,4 +1,5 @@
 {% extends 'members/base.html' %}
+{% load i18n %}
 {% load static %}
 {% block content %}
     <!-- !PAGE CONTENT! -->
@@ -13,7 +14,7 @@
                 <p>꾸다 구성원이 되고 싶으면 아래 양식을 추가 하세요!</p>
                 <form method="post">{% csrf_token %}
                     {{ form.as_p }}
-                    <input type="submit" value="{{ _('B_SAVE') }}">
+                    <input type="submit" value="{% translate "B_SAVE" %}">
                 </form>
             </div>
         </div>

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-13 15:13+0900\n"
+"POT-Creation-Date: 2021-05-13 15:48+0900\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: conf/settings.py:135
+#: conf/settings.py:136
 msgid "Korean"
 msgstr ""
 
-#: conf/settings.py:136
+#: conf/settings.py:137
 msgid "English"
 msgstr ""
 
@@ -155,7 +155,8 @@ msgid "TODO_WATCH"
 msgstr "감시하기"
 
 #: members/templates/members/member_detail.html:44
-#: members/templates/members/member_update.html:16
+#: members/templates/members/member_update.html:15
+#: members/templates/members/member_update.html:20
 msgid "B_UPDATE"
 msgstr "수정하기"
 
