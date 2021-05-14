@@ -11,7 +11,7 @@ from members.models import Member
 def future_date_validator(value):
     print(value, date.today())
     if value < date.today():
-        raise forms.ValidationError('오늘 날짜 이전은 선택할 수 없어요!')
+        raise forms.ValidationError(_('not allow past date'))
 
 
 class Todo(models.Model):
